@@ -1,16 +1,22 @@
 const loginInput = document.querySelector("#login-form input");
 const loginForm = document.querySelector("#login-form");
 
-//이벤트리스너 함수는 만들어지고 실행될때 브라우저에 의해 매개변수에 정보를 준다.
-//모든 이벤트리스너 함수의 첫번째 매개변수는 항상 지금 막 벌어진 일들에 대한 정보가 된다. 
-//JS는 그 정보를 무료로 제공하고 우리는 공간만 제공하면 된다.
-function onLoginSubmit(tomato){
-  tomato.preventDefault();
-  //이벤트의 기본행동이 되지 않도록 막는것. 기본행동이란 어떤 함수에 대해 브라우저가 기본적으로 수행하는 동작
-  //ex) form 을 submit 하면 새로고침 된다 -> 이 기본 동작을 막는다.
-  //const username = loginInput.value;
-  console.log(tomato);
+const link = document.querySelector("a");
+
+function onLoginSubmit(event){
+  event.preventDefault();
+  console.log(event);
 }
 
-loginForm.addEventListener("submit",onLoginSubmit)
+function handleClickLink(event){
+  //event : 이벤트에 대한 정보를 알려준다. 
+  //브라우저를 다룬다.
+  event.preventDefault();
+  console.log(event);
+  //모든것이 막혀있다가 OK를 누르면 다시 기본 동작이 실행된다.
+  alert("clicked!"); 
+}
+
+loginForm.addEventListener("submit",onLoginSubmit);
+link.addEventListener("click",handleClickLink);
 
