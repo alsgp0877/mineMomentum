@@ -9,8 +9,15 @@
   </head>
   <body>
     <form id="login-form">
-      <a href="https://nomadcoders.co">Go to courses</a>
+      <input
+        required
+        maxlength="15"
+        type="text"
+        placeholder="what is your name?"
+      />
+      <input type="submit" value="Login In"/>
     </form>
+    <h1 id="greeting" class="hidden"></h1><!--form은 숨기고 h1은 표시되도록한다.-->
     <script src="app.js"/></script>
   </body>
 </html>
