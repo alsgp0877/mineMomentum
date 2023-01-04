@@ -1,6 +1,6 @@
-const images = ["0.jpg","1.jpg","2.png"];
+const aimages = ["0.jpg","1.jpg","2.png"];
 
-const chosenImages = images[Math.floor(Math.random()*images.length)];
+const chosenImages = aimages[Math.floor(Math.random()*aimages.length)];
 
 //html 에서 재료를 가져오는것이아닌
 //js에서 재료를 주는 행위
