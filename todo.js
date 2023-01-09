@@ -2,7 +2,9 @@ const toDoForm = document.getElementById("todo-form");
 const toDoList = document.getElementById("todo-list");
 const toDoInput = document.querySelector("#todo-form input");
 
-let toDos = [];
+const TODOS_KEY="todos";
+
+let toDos = []; //여기가 비어있기 때문에 덮어씌기만 되고 이전 데이터가 없다.
 
 //어떤 것을 클릭했는지 알 수 없어서 대안찾는중
 //event 가 click 된 위치를 알려준다는 것을 알 수 있다.
@@ -12,7 +14,7 @@ let toDos = [];
 function saveToDos(){
   //단순텍스트가 아니라 배열로 저장되길 원한다.
   //stringify는 object value 형이든 array이든 다 string으로 바꿔준다.
-  localStorage.setItem("todos",JSON.stringify(toDos));
+  localStorage.setItem("TODOS_KEY",JSON.stringify(toDos));
 }
 function deleteToDo(event){
   const li = event.target.parentElement;//target은 클릭된 HTML element
@@ -42,3 +44,12 @@ function handleToDoSubmit(event){
 }
 
 toDoForm.addEventListener("submit",handleToDoSubmit);
+
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+if(saveToDos !== null){
+  const parsedToDos = JSON.parse(saveToDos);  //string을 array로 바꿔준다.
+  toDos = parsedToDos;
+  //forEach는 item을 제공해준다.
+  parsedToDos.forEach(paintToDo);
+}
