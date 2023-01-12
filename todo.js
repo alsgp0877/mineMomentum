@@ -19,6 +19,8 @@ function saveToDos(){
 function deleteToDo(event){
   const li = event.target.parentElement;//target은 클릭된 HTML element
   li.remove();
+  toDos = toDos.filter((toDo) => toDo.id !== li.id); //DB에 저장된 데이터를 가져와서 삭제하려고 클릭한 데이터를 제외하기
+  saveToDos();
 }
 function paintToDo(newTodoObj){
   const li = document.createElement("li");
@@ -67,11 +69,11 @@ if(savedToDos !== null){
 //item을 지우는게 아니라 item을 제외한다.
 //직동방법
 //function을 [1,2,3,4] 배열 요소의 갯수만큼 4번을 부르고 false를 리턴하면 그 요소는 새 배열에 포함되지 않는다. true는 반대
-[1,2,3,4].filter(functions());
-functions(1) t
-functions(2) t
-functions(3) f
-functions(4) t
+// [1,2,3,4].filter(functions());
+// functions(1) t
+// functions(2) t
+// functions(3) f
+// functions(4) t
 //3빼고 1,2,4만 유지한다.
 //#7.7 4:45
 
