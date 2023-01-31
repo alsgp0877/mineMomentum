@@ -14,12 +14,12 @@ let toDos = []; //여기가 비어있기 때문에 덮어씌기만 되고 이전
 function saveToDos(){
   //단순텍스트가 아니라 배열로 저장되길 원한다.
   //stringify는 object value 형이든 array이든 다 string으로 바꿔준다.
-  localStorage.setItem("TODOS_KEY",JSON.stringify(toDos));
+  localStorage.setItem(TODOS_KEY,JSON.stringify(toDos));
 }
 function deleteToDo(event){
   const li = event.target.parentElement;//target은 클릭된 HTML element
   li.remove();
-  toDos = toDos.filter((toDo) => toDo.id !== li.id); //DB에 저장된 데이터를 가져와서 삭제하려고 클릭한 데이터를 제외하기
+  toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id)); //DB에 저장된 데이터를 가져와서 삭제하려고 클릭한 데이터를 제외하기
   saveToDos();
 }
 function paintToDo(newTodoObj){
@@ -75,7 +75,6 @@ if(savedToDos !== null){
 // functions(3) f
 // functions(4) t
 //3빼고 1,2,4만 유지한다.
-//#7.7 4:45
 
 
 

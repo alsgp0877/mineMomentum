@@ -7,4 +7,5 @@ const chosenImages = aimages[Math.floor(Math.random()*aimages.length)];
 //image 주소를 바꾸기 위해서
 const bgImage = document.createElement("img");
 bgImage.src=`img/${chosenImages}`;
+bgImage.class='imaWrap';
 document.body.appendChild(bgImage);
