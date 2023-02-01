@@ -8,7 +8,12 @@
       <title>모멘텀</title>
   </head>
   <body>
-    <h2 id="clock">00:00</h2>
+    <div id="clock">
+      <span>00:00</span>
+    </div>
+    <div id="greeting" class="hidden">
+      <span></span>
+    </div>
 
     <!--form은 숨기고 h1은 표시되도록한다.-->
     <form id="login-form" class="hidden"> 
@@ -20,7 +25,6 @@
       />
       <input type="submit" value="Login In"/>
     </form>
-    <h1 id="greeting" class="hidden"></h1>
 
     <form id="todo-form"> 
       <input
@@ -29,6 +33,7 @@
         placeholder="Write a To Do and Press Enter"
       />
     </form>
+    
     <ul id="todo-list">
     </ul>
 
@@ -47,6 +52,6 @@
     <script src="quotes.js"/></script>
     <script src="background.js"/></script>
     <script src="todo.js"/></script>
-    <script src="weather.js"/></script>
+    <!-- <script src="weather.js"/></script> -->
   </body>
 </html>

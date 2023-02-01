@@ -1,6 +1,7 @@
 const loginInput = document.querySelector("#login-form input");
 const loginForm = document.querySelector("#login-form");
 const greeting = document.querySelector("#greeting");
+const greetingSpan = document.querySelector("#greeting span");
 
 
 //반복되는 string 들은 대문자 변수로 저장해놓는게 좋다. 오탈자 방지
@@ -9,7 +10,7 @@ const USERNAME_KEY = "username";
 
 function paintGreetings(username){
   greeting.classList.remove(HIDDEN_CLASSNAME);
-  greeting.innerText = `Hello ${username}`;
+  greetingSpan.innerText = `Hello ${username}`;
 }
 
 function onLoginSubmit(event){
